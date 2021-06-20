@@ -1,0 +1,45 @@
+.sort-btn {
+  cursor: pointer;
+  user-select: none;
+}
+
+.search {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.app {
+  margin-top: 50px;
+}
+
+.table tr:hover {
+  cursor: pointer;
+  color: #007bff !important;
+}
+
+.page-link {
+  cursor: pointer;
+  user-select: none;
+}
+
+.choose-link-container {
+  display: flex;
+}
+
+.choose-link {
+  width: 50%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #0d6efd;
+  border-radius: 10px;
+  margin: 10px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.choose-link:hover {
+  background: #ededed;
+}
