@@ -18,4 +18,7 @@ export default defineConfig({
     ],
     //extensions: ['*', '.js', '.vue', '.json',]
   },
+  assetsDir: '/oxstablevite/',
+  publicDir: '/oxstablevite/',
+  base: '/oxstablevite/'
 })
