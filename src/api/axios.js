@@ -1,5 +1,5 @@
 import axios from 'axios'
 
-axios.defaults.baseURL = 'http://www.filltext.com'
+axios.defaults.baseURL = 'https://www.filltext.com'
 
 export default axios

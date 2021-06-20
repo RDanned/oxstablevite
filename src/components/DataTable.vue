@@ -1,6 +1,7 @@
 <template>
+  <div v-if="isError">error occured while loading data</div>
   <data-table-preloader v-if="isLoading" />
-  <template v-else>
+  <template v-else-if="!isError">
     <data-table-search />
     <data-table-add :collumns="collumns" />
     <table class="table table-striped table-bordered">
@@ -71,6 +72,7 @@ export default {
   data() {
     return {
       isLoading: false,
+      isError: false,
       collumns: ['id', 'firstName', 'lastName', 'email', 'phone'],
     }
   },
@@ -92,10 +94,17 @@ export default {
         if (type == 'small') count = 32
         else if (type == 'big') count = 1000
 
-        dataApi.getData(count).then((data) => {
-          this.$store.dispatch(actionTypes.setData, {data})
-          this.isLoading = false
-        })
+        dataApi
+          .getData(count)
+          .then((data) => {
+            this.$store.dispatch(actionTypes.setData, {data})
+            this.isLoading = false
+          })
+          .catch(() => {
+            this.isError = true
+            this.isLoading = false
+            console.log('error')
+          })
       },
       immediate: true,
     },
